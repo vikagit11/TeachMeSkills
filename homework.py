@@ -13,6 +13,7 @@
 #   "🌈 Rainbow unicorn of color sparkly"
 # ]
 unicorns = [{"color": "pink"}, {"color": "blue"}, {"color": "sparkly"}]
+unicorns.append({"color": "gold"})
 def unicorns_to_rainbows(unicorns: list[dict]) -> list[str]:
     return [f"🌈 Rainbow unicorn of color {u['color']}" for u in unicorns]
 print(unicorns_to_rainbows(unicorns))
