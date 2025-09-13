@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<a class="btn btn-primary mb-3" href="{{ url_for('main.create_poll') }}">Создать опрос</a>
+<ul class="list-group">
+  {% for poll in polls %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="{{ url_for('main.poll_detail', poll_id=poll.id) }}">{{ poll.question }}</a>
+      <form method="POST" action="{{ url_for('main.delete_poll', poll_id=poll.id) }}">
+          <button class="btn btn-danger btn-sm">Удалить</button>
+      </form>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

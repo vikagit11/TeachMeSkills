@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form method="POST">
+    {{ form.hidden_tag() }}
+    {{ form.question.label }} {{ form.question() }}
+    {% for option in form.options %}
+        {{ option.text.label }} {{ option.text() }}
+    {% endfor %}
+    {{ form.submit() }}
+</form>
+
+{% endblock %}
+
